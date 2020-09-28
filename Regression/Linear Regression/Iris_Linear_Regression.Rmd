@@ -1,0 +1,41 @@
+---
+title: "Iris Linear Regression"
+output:
+  pdf_document: default
+  html_notebook: default
+---
+
+```{r}
+library(datasets)
+data(iris)
+summary(iris)
+```
+
+```{r}
+Y <- iris[, 'Sepal.Length']
+X <- iris[, 'Sepal.Width']
+```
+
+```{r}
+mean(Y)
+```
+
+```{r}
+mean(X)
+```
+
+```{r}
+cor(Y, X)
+```
+
+```{r}
+model <- lm(Y ~ X)
+model
+```
+
+```{r}
+plot(Y ~ X, xlab = 'Sepal Width', ylab = 'Sepal Length')
+abline(model)
+```
+
+
